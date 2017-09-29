@@ -1,0 +1,142 @@
+@function rem($px) {
+    @return $px / 640 * 16rem;
+}
+
+@mixin m-header {
+  .m-header {
+    color: #fff;
+    line-height: rem(120);
+    header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      background-color: RGBA(255,100,102,.8);
+      .fa {
+        padding: 0 rem(30);
+      }
+      transition: all 0.3s ease;
+    }
+    .hd-trans {
+      transform: translateX(250px);
+    }
+    .m-menu {
+      position: fixed;
+      transition: all 0.3s ease;
+      top: 0;
+      left: -250px;
+      bottom: 0;
+    }
+  }
+}
+
+@mixin m-menu {
+  .m-menu {
+    background-color: RGB(34,38,42);
+    height: 100%;
+    width: 250px;
+    color: #999;
+    .menu-hd {
+      background-color: RGB(38,45,48);
+      img {
+        width: rem(250);
+        padding-top: rem(60);
+      }
+      p {
+        margin: 0;
+        margin-top: rem(-10);
+      }
+    }
+    .item {
+      display: block;
+      color: #999;
+    }
+    .item.active {
+      color: #ff8385!important;
+    }
+  }
+}
+
+@mixin u-menu-item {
+  .u-menu-item {
+    font-size: 15px;
+    line-height: rem(70);
+    text-align: left;
+    padding: rem(25) rem(20);
+    
+    border-bottom: rem(3) solid #333;
+    .icon {
+      display: inline-block;
+      background-color: RGB(56,60,64);
+      vertical-align: top;
+      border-radius: 50%;
+      width: rem(70);
+      height: rem(70);
+      text-align: center;
+      margin-right: rem(40);
+      .fa {
+        font-size: 16px;
+        vertical-align: middle;
+      }
+    }
+    .menu-title {
+      font-weight: 700;
+    }
+
+  }
+}
+
+@mixin m-detail-dialog {
+  .m-detail-dialog {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.57);
+    z-index: 100;
+    text-align: center;
+    vertical-align: middle;
+    .box {
+      display: table-cell;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+    .dialog {
+      width: 85%;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      background-color: #f5f8f7;
+      //border-radius: 4px;
+      .img-deco {
+        position: absolute;
+        top: rem(320);
+        left: rem(70);
+        letter-spacing: rem(18);
+        writing-mode: vertical-rl;
+        font-weight: 600;
+        color: #180905;
+      }
+      img {
+        width: 100%;
+      }
+      .info {
+        min-height: rem(200);
+        max-height: rem(200);
+        text-align: left;
+        margin: rem(110) rem(30) rem(100) rem(50);
+        writing-mode: vertical-lr;
+        // writing-mode: vertical-lr;
+        .date {
+          writing-mode: horizontal-tb;
+          font-size: 13px;
+          position: absolute;
+          right: rem(15);
+          bottom: rem(15);
+        }
+      }
+    }
+  }
+}
